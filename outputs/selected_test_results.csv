@@ -1,0 +1,4 @@
+group,selected_configuration,selection_metric,test_loss,test_accuracy
+optimizers,RMSprop / scheduled,minimum validation loss,0.8322255172729492,0.678
+regularization,No regularization,minimum validation loss,0.871665641784668,0.638
+architecture,Residual MLP,minimum validation loss,0.8074692459106445,0.706
