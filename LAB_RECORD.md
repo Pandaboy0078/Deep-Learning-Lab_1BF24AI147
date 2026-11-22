@@ -42,17 +42,21 @@ Values measured on the synthetic NumPy example with seed 42 and 60 epochs:
 
 All methods reduced loss, but they needed different numbers of parameter updates. The epoch and optimizer-step plots show different perspectives on training efficiency.
 
-## Observations: Fashion-MNIST
+## Observations: Fashion-MNIST (quick run)
 
-**Fill these tables only after running `python -m lab01.run --mode full`.**
+The GitHub Actions run on 22 November 2026 used real Fashion-MNIST images with 1,000 training, 300 validation and 500 test examples. The regularization comparison used 400 training examples. These results were recorded using `--mode quick`.
 
-| Experiment | Best configuration (validation loss) | Validation accuracy | Held-out test accuracy |
-| --- | --- | --- | --- |
-| Optimizers and rate policies | Not yet measured | — | — |
-| Regularization and early stopping | Not yet measured | — | — |
-| Plain vs residual MLP | Not yet measured | — | — |
+| Experiment | Best configuration (lowest validation loss) | Validation accuracy | Test accuracy |
+| --- | --- | ---: | ---: |
+| Optimizers and learning rates | RMSprop with scheduled learning rate | 71.33% | 67.8% |
+| Regularization | No regularization | 60.33% | 63.8% |
+| Plain versus residual MLP | Residual MLP | 74.67% | 70.6% |
 
-Attach these plots from `outputs/`: optimizer validation accuracy, learning rate schedules, training/validation loss, regularization validation loss, and architecture validation accuracy.
+The small-data baseline reached 70.0% training accuracy and 60.33% validation accuracy, a gap of 9.67 percentage points. In the seven-epoch quick run, dropout, L2 and augmentation did not improve validation loss over the baseline. Early stopping did not trigger, because the best validation loss was reached at the last epoch. The residual MLP reached 74.67% validation accuracy, compared with 71.67% for the plain MLP, under the same four-epoch training budget.
+
+These are short-run observations only, not a claim that a particular optimizer or regularization strategy is always best. More epochs are needed to judge how regularization and early stopping affect overfitting.
+
+**Result figures:** See [RESULTS.md](RESULTS.md) for all 12 measured PNG graphs, and [outputs/](outputs/) for the CSV result tables.
 
 ## Discussion prompts
 
@@ -64,4 +68,4 @@ Attach these plots from `outputs/`: optimizer validation accuracy, learning rate
 
 ## Result
 
-The requested experiment implementations and graph-generation routines are included. Final Fashion-MNIST findings must be written from the measured full-run CSV results rather than assumed in advance.
+All the requested experiments have been implemented, and the quick run produced Fashion-MNIST plots and result tables. A full-mode run is recommended before making stronger conclusions.
