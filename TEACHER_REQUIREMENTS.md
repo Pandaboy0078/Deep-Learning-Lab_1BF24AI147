@@ -21,8 +21,9 @@
 - [x] All experiment types implemented in source
 - [x] NumPy gradient descent measured
 - [x] Basic automated tests available
-- [ ] Execute full Fashion-MNIST run and save real plots/results
-- [ ] Copy actual observations into the lab record
+- [x] Execute quick Fashion-MNIST run and save 12 measured result graphs plus CSV files
+- [ ] Execute longer full Fashion-MNIST run (optional for a more complete comparison)
+- [x] Copy measured quick-run observations into the lab record
 - [x] Project source pushed to GitHub
 
 Later continuous-evaluation programs can be placed in the same repository as `lab02/`, `lab03/`, etc.
