@@ -53,6 +53,12 @@ All MLP trials use seed 42, batch size 64 and width 128 by default. The plain an
 
 Learning rates: 0.025 for SGD momentum and Nesterov; 0.001 for RMSprop, Adam and AdamW. Scheduled trials halve the rate approximately every third of the training budget. Validation loss chooses the best epoch and one winner per group; the independent test subset is used only to evaluate that winner.
 
+## Results gallery
+
+[View all 12 measured result graphs and the quick-run accuracy summary](RESULTS.md).
+
+A GitHub Actions workflow under **Actions → Generate Lab 1 result graphs** runs the experiments on real Fashion-MNIST images and commits the figures and CSV results into `outputs/`. Select **full** under **Run workflow** for a longer comparison.
+
 ## Outputs
 
 Running the scripts creates figures and CSV files in `outputs/`:
@@ -78,6 +84,6 @@ The NumPy regression example has been run locally with seed 42 and 60 epochs:
 | Stochastic | 0.0688 | 7,200 |
 | Mini-batch | 0.0636 | 480 |
 
-Fashion-MNIST accuracy values are **not included** here because a full dataset run has not been completed in this environment. Do not use numbers from simulated image tests as Fashion-MNIST results.
+The GitHub Actions quick run completed using actual Fashion-MNIST images. Results are summarized in [RESULTS.md](RESULTS.md), and all measured graphs are available in [outputs/](outputs/). The longer full-mode experiment has not been run yet.
 
-See [LAB_RECORD.md](LAB_RECORD.md) for the lab write-up and [TEACHER_REQUIREMENTS.md](TEACHER_REQUIREMENTS.md) for the requirement checklist. Add later continuous-evaluation programs in `lab02/`, `lab03/`, etc.
+See [RESULTS.md](RESULTS.md) for the graph gallery, [LAB_RECORD.md](LAB_RECORD.md) for the lab write-up, and [TEACHER_REQUIREMENTS.md](TEACHER_REQUIREMENTS.md) for the requirement checklist. Add later continuous-evaluation programs in `lab02/`, `lab03/`, etc.
